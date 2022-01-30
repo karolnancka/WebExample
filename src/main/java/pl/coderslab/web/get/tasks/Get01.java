@@ -1,4 +1,4 @@
-package pl.coderslab.web.get.task01;
+package pl.coderslab.web.get.tasks;
 //Zadanie 1 - rozwiązywane z wykładowcą
 //W projekcie stwórz servlet Get1, dostępny pod adresem /get1, który pobierze z adresu dwa parametry: start i end .
 //Po uruchomieniu aplikacji na serwerze, w przeglądarce wyświetlą się wszystkie liczby od start do end. (dla uproszczenia załóżmy, że będziemy przesyłać tylko liczby całkowite). Jeżeli zmienne nie są przesłane, to strona ma wypisać informację BRAK.
