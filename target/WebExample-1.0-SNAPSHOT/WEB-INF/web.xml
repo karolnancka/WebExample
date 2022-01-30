@@ -12,6 +12,7 @@
         <servlet-name>Servlet12</servlet-name>
         <servlet-class>pl.coderslab.web.Servlet12</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>Servlet12</servlet-name>
         <url-pattern>/servlet12</url-pattern>
