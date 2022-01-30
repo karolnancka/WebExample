@@ -18,25 +18,24 @@ public class Get03 extends HttpServlet {
 
         try {
 
-
             int width = Integer.valueOf(widthStr);
             int height = Integer.valueOf(heightStr);
-            for (int i = 1; i <= width; i++) {
-                for (int j = 1; j <= height; j++) {
-                    resp.getWriter().print(j * i + " ");
+            for (int i = 1; i <= height; i++) {
+                for (int j = 1; j <= width; j++) {
+                    resp.getWriter().print(j * i + "    ");
                 }
                 resp.getWriter().println();
             }
 
 
         } catch (NumberFormatException e) {
-            //resp.getWriter().println("Incorrect request data. Input numbers in parameters: start and end");
-            //resp.getWriter().println(String.format("start=%s, end=%s", heightStr, widthStr));
+            resp.getWriter().println("Incorrect request data. Input numbers in parameters: start and end");
+            resp.getWriter().println(String.format("start=%s, end=%s", heightStr, widthStr));
 
             int width = 5;
             int height = 10;
-            for (int i = 1; i <= width; i++) {
-                for (int j = 1; j <= height; j++) {
+            for (int i = 1; i <= height; i++) {
+                for (int j = 1; j <= width; j++) {
                     resp.getWriter().print(j * i + " ");
                 }
                 resp.getWriter().println();
