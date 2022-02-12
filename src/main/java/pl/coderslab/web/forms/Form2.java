@@ -13,7 +13,10 @@ public class Form2 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Hello World");
         String message = request.getParameter("message");
-        String acknowledgement = request.getParameter("acknowledgement");
-        response.getWriter().println(String.format("Hello, %s %s", message, acknowledgement));
+        final String acknowledgement = request.getParameter("acknowledgment");
+        if(acknowledgement == null){
+            message = Censored.doCensor(message);
+        }
+        response.getWriter().println(String.format(message));
     }
 }

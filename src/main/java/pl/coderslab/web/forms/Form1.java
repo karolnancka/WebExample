@@ -17,7 +17,7 @@ public class Form1 extends HttpServlet {
             throws ServletException, IOException {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
-        response.getWriter().println(String.format("Witaj %s %s", firstName, lastName));
+        response.getWriter().println(String.format("Hello %s %s", firstName, lastName));
 
     }
 
