@@ -16,22 +16,26 @@ public class Get03 extends HttpServlet {
         String widthStr = req.getParameter("width");
         String heightStr = req.getParameter("height");
 
-        try {
+        if (widthStr != null & heightStr != null) {
+            try {
 
-            int width = Integer.valueOf(widthStr);
-            int height = Integer.valueOf(heightStr);
-            for (int i = 1; i <= height; i++) {
-                for (int j = 1; j <= width; j++) {
-                    resp.getWriter().print(j * i + "    ");
+                int width = Integer.valueOf(widthStr);
+                int height = Integer.valueOf(heightStr);
+                for (int i = 1; i <= height; i++) {
+                    for (int j = 1; j <= width; j++) {
+                        resp.getWriter().print(j * i + "  ");
+                    }
+                    resp.getWriter().println();
                 }
-                resp.getWriter().println();
+
+
+            } catch (NumberFormatException e) {
+                resp.getWriter().println("Incorrect request data. Input numbers in parameters: start and end");
+                resp.getWriter().println(String.format("start=%s, end=%s", heightStr, widthStr));
+
+
             }
-
-
-        } catch (NumberFormatException e) {
-            resp.getWriter().println("Incorrect request data. Input numbers in parameters: start and end");
-            resp.getWriter().println(String.format("start=%s, end=%s", heightStr, widthStr));
-
+        } else {
             int width = 5;
             int height = 10;
             for (int i = 1; i <= height; i++) {
@@ -40,8 +44,6 @@ public class Get03 extends HttpServlet {
                 }
                 resp.getWriter().println();
             }
-
-
         }
     }
 }
