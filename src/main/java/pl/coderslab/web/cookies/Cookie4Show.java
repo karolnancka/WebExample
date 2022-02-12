@@ -23,6 +23,5 @@ public class Cookie4Show extends HttpServlet {
         }else {
             response.getWriter().println("no cookies");
         }
-
     }
 }
