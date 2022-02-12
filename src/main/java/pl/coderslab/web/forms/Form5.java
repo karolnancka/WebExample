@@ -14,7 +14,7 @@ public class Form5 extends HttpServlet {
 
         String tempInput = request.getParameter("degrees");
         String conversionType = request.getParameter("conversionType");
-        int temp = Integer.parseInt(tempInput);
+        float temp = Integer.parseInt(tempInput);
         if(conversionType.equals("celcToFahr")){
 
             response.getWriter().println(temp + "C in Fahrenheit equals =  " + ((temp * 9/5) + 32));
