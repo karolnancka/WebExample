@@ -6,20 +6,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Locale;
 
-@WebServlet("/mvc11")
-public class Mvc11 extends HttpServlet {
+@WebServlet("/mvc12")
+public class Mvc12 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String roleParamStr = req.getParameter("role");
-        if (roleParamStr != null) {
-            final String userRole = "ROLE_" + roleParamStr.toUpperCase();
-            req.setAttribute("userRole", userRole);
-        }
+        final String startStr = req.getParameter("start");
+        final String endStr = req.getParameter("end");
 
+        try {
+            Integer start = Integer.valueOf(startStr);
+            Integer end = Integer.valueOf(endStr);
+
+            start += 10;
+            end += 10;
+
+            req.setAttribute("start", start);
+            req.setAttribute("end", end);
+        } catch (NumberFormatException e) {
+
+        }
         getServletContext()
-                .getRequestDispatcher("/jsp1.jsp")
+                .getRequestDispatcher("/jsp2.jsp")
                 .forward(req, resp);
     }
 }
