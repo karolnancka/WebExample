@@ -1,0 +1,16 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: karol
+  Date: 13.02.2022
+  Time: 11:01
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Footer</title>
+</head>
+<body>
+<footer style="background-color: aquamarine">Copyright CodersLab 2022, mailme: kn@gmail.com</footer>
+</body>
+</html>
