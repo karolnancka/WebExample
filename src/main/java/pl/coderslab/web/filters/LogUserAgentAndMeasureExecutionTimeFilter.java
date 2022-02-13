@@ -10,7 +10,7 @@ public class LogUserAgentAndMeasureExecutionTimeFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
-        chain.doFilter(request, response);
+        //chain.doFilter(request, response);
         String userAgent = ((HttpServletRequest) request).getHeader("User-Agent");
         System.out.println("User-Agent " + userAgent);
         final long start = System.currentTimeMillis();
